@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   }
 
   customer: Customers = new Customers();
+  invalidLogin:boolean = false;
   loginForm = new FormGroup({
     username: new FormControl(),
     password: new FormControl()
@@ -28,34 +29,29 @@ export class LoginComponent implements OnInit {
     console.log(this.loginForm.value)
     this.customer.username = this.loginForm.value.username;
     this.customer.password = this.loginForm.value.password;
-    // var isTrue = this.authService.authendicate(this.customer);
+   // this.authService.authenticate(this.customer.username, this.customer.password);
+   
+    (this.authService.authenticate(this.customer.username, this.customer.password).subscribe(
+      
+      (data:string) => {
+       
+        console.log(data)
+        this.router.navigate(['/viewcustomers']);
+      },
+      (completed:string)=>{
+        console.log('completed')
+        console.log(completed)
+        if(completed)
+        this.router.navigate(['/viewcustomers']);
+      },
+      () => {
+        this.invalidLogin = true
 
-    // this.http.authenticate(this.customer).subscribe(
-    //   (resp: string) => {
-    //     let tokenStr = 'Bearer ' + resp.toString();
-    //     console.log(tokenStr)
-    //     sessionStorage.setItem('token', tokenStr);
-    //     sessionStorage.setItem('username', this.customer.username);
-    //     this.router.navigate(['/viewcustomers']);
-    //   },
-    //   (error: Error) => { },
-    //   () => { }
-    // );
-    this.http.authenticate(this.customer).pipe(
-      map(
-        resp => {
-          sessionStorage.setItem('username', this.customer.username);
-          let tokenStr = 'Bearer ' + resp;
-          sessionStorage.setItem('token', tokenStr);
-
-        }
-      )
+      }
+    )
+   
     );
-
-
-    // if (isTrue) {
-    //   this.router.navigate(['/viewcustomers']);
-    // }
+    // setTimeout(()=>{},10000);
   }
 
 }

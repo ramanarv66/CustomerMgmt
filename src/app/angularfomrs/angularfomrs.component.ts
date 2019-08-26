@@ -21,7 +21,7 @@ export class AngularfomrsComponent implements OnInit {
     console.log(this.username + ' ' + this.password)
     this.customer.username = this.username;
     this.customer.password = this.password;
-    if(this.authservice.authendicate(this.customer)){
+    if(this.authservice.authenticate(this.username, this.password)){
       this.router.navigate(['viewcustomers']);
 
     }

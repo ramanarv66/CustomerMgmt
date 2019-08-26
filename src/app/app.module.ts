@@ -19,8 +19,9 @@ import { DialogComponent } from './shared/dialog/dialog.component';
 import { SubjectService } from './service/subject.service';
 import { RedirectComponent } from './redirect/redirect.component';
 import { SigninComponent } from './signin/signin.component';
-import { HttpinterceptorService } from './interceptor/httpinterceptor.service';
+//import { HttpinterceptorService } from './interceptor/httpinterceptor.service';
 import { TestComponent } from './test/test/test.component';
+import { HttpinterceptorService } from './interceptor/httpinterceptor.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { TestComponent } from './test/test/test.component';
   providers: [
     {
       provide: HTTP_INTERCEPTORS, useClass: HttpinterceptorService, multi: true
-    }, CanDeactiveGuard, AuthguardGuard, SubjectService
+    }, 
+    CanDeactiveGuard, AuthguardGuard, SubjectService
   ],
   bootstrap: [AppComponent]
 })
