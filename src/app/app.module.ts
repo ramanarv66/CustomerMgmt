@@ -20,6 +20,7 @@ import { SubjectService } from './service/subject.service';
 import { RedirectComponent } from './redirect/redirect.component';
 import { SigninComponent } from './signin/signin.component';
 import { HttpinterceptorService } from './interceptor/httpinterceptor.service';
+import { TestComponent } from './test/test/test.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HttpinterceptorService } from './interceptor/httpinterceptor.service';
     AngularfomrsComponent,
     DialogComponent,
     RedirectComponent,
-    SigninComponent
+    SigninComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
