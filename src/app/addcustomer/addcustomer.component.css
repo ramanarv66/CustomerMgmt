@@ -1,0 +1,11 @@
+/*  */
+
+.ng-invalid.ng-touched{
+    border-color: red
+}
+p{
+    color: red;
+}
+label{
+    color:black;
+}

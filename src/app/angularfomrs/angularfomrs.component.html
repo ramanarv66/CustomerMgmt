@@ -1,0 +1,24 @@
+<form>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="userName">UserName</label>
+                <input type="text" class="form-control"  required [(ngModel)]="username"
+                 name="username" #username1="ngModel">
+                <p class="help-bpx alert alert-danger" *ngIf="username1.invalid && username1.touched">username required</p>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="text" class="form-control"  required [(ngModel)]="password" 
+                name="password"  #password1="ngModel" >
+                <!-- <p  ></p> -->
+                <p *ngIf="password1.invalid && password1.touched" [ngStyle]="{'color': password1.invalid && password1.touched ? 'red':''}" >password cant be null</p>
+                <!-- https://codecraft.tv/courses/angular/built-in-directives/ngstyle-and-ngclass/ -->
+            </div>
+            <hr>
+            <div class="form-group">
+                <button class="btn btn-danger" (click)="templateLogin()">TemplateLogin</button>
+            </div>
+        </div>
+    </div>
+</form>

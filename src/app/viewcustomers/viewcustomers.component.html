@@ -1,0 +1,27 @@
+<br>
+<br>
+<div class="container">
+<table  class="table" >
+    <thead class="thead-blue">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">UserName</th>
+        <th scope="col">Email</th>
+        <th scope="col">Update/Delete</th>
+      </tr>
+    </thead>
+    <tbody  >
+      <tr *ngFor="let customer of customers;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{customer.firstname}}</td>
+        <td>{{customer.lastname}}</td>
+        <td>{{customer.username}}</td>
+        <td>{{customer.email}}</td>
+        <td><button class="btn btn-success" (click)="updateDelet(customer)">Delete/Update</button></td>
+      </tr>
+     
+    </tbody>
+  </table>
+</div>

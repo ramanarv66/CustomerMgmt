@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form #registerForm="ngForm">
+                <div class="form-group">
+                    <label for="username">Create UserName</label>
+                    <input type="text" class="form-control" #username="ngModel" #username1
+                     name="username" [(ngModel)]="register.username" required >
+                   
+                     <div *ngIf="username.invalid && username.touched" class="text text-danger">username required</div>
+                </div>
+                <!-- {{registerForm.value|json}}
+                {{register|json}} -->
+                {{username1.className}}
+                <div class="form-group">
+                    <label for="mail">Enter Mail</label>
+                    <input type="text" class="form-control"  #mail="ngModel" #mail1
+                     name="mail" [(ngModel)]="register.mail" required>
+                    <div *ngIf="mail.invalid && mail.touched" class="text text-danger">mail required</div>
+                </div>
+                {{mail1.className}}
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="text" class="form-control"  name="password" [(ngModel)]="register.password"
+                    #password="ngModel" required>
+                    <div *ngIf="password.invalid && password.touched" class="text-danger">password required</div>
+                </div>
+                <div class="form-group">
+                    <label for="confirmpassword">Password</label>
+                    <input type="text" class="form-control"  name="confirmpassword" required
+                    [(ngModel)]="register.confirmpassword" #confirmpassword="ngModel" (change)="validatePassword()">
+                    <div *ngIf="confirmpassword.invalid && confirmpassword.touched" class="text text-danger">Please confirm same password</div>
+                    <div *ngIf="showPassWordWarn" class="alert alert-danger">Password and Confirm Password should match</div>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" (click)="signIn()" [disabled]="registerForm.invalid">SignIn</button> &nbsp;
+                    <button class="btn btn-danger" (click)="cancel()">Cancel</button> &nbsp;
+                </div>
+                <div class="form-group">
+                    <div *ngIf="showSuccessMsg" class="alert alert-success">Registration Successful</div> 
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
