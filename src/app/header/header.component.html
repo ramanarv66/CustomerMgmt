@@ -8,7 +8,7 @@
         <a class="nav-item nav-link" *ngIf="this.authservice.isValidUser()" [routerLink]="[ '/viewcustomers' ]">ViewCustomers</a>
         <a class="nav-item nav-link"  *ngIf="this.authservice.isValidUser()" routerLink="/addcustomer">AddCustomers</a>
         <a class="nav-item nav-link" routerLink="/login">Login</a>
-        <a class="nav-item nav-link" routerLink="/redirect">Redirect</a>
+        <!-- <a class="nav-item nav-link" routerLink="/redirect">Redirect</a> -->
         <a class="nav-item nav-link" routerLink="/signin">SignIn</a>
         <a class="nav-item nav-link" *ngIf="this.authservice.isValidUser()" routerLink="/logout">Logout</a>
         <a class="nav-item nav-link" *ngIf="this.authservice.isValidUser()" routerLink="/about">About</a>

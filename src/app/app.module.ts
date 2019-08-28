@@ -17,12 +17,10 @@ import { FormsModule } from '@angular/forms';
 import { AuthguardGuard } from './guards/authguard.guard';
 import { DialogComponent } from './shared/dialog/dialog.component';
 import { SubjectService } from './service/subject.service';
-import { RedirectComponent } from './redirect/redirect.component';
 import { SigninComponent } from './signin/signin.component';
-//import { HttpinterceptorService } from './interceptor/httpinterceptor.service';
 import { TestComponent } from './test/test/test.component';
 import { HttpinterceptorService } from './interceptor/httpinterceptor.service';
-
+import { RedirectComponent } from './redirect/redirect.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,9 +33,9 @@ import { HttpinterceptorService } from './interceptor/httpinterceptor.service';
     AboutComponent,
     AngularfomrsComponent,
     DialogComponent,
-    RedirectComponent,
     SigninComponent,
-    TestComponent
+    TestComponent,
+    RedirectComponent
   ],
   imports: [
     BrowserModule,

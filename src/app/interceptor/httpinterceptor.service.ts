@@ -17,9 +17,11 @@ export class HttpinterceptorService implements HttpInterceptor {
 
      
       req = req.clone({
-        setHeaders: {
-          Authorization: sessionStorage.getItem('token')
-        }
+        // setHeaders: {
+        //   'Authorization': sessionStorage.getItem('token')
+        // }
+        headers: req.headers.set('Content-Type', 'application/json')
+          .set('Authorization', sessionStorage.getItem('token'))
       })
 
     }

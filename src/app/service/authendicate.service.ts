@@ -62,9 +62,10 @@ export class AuthendicateService {
 
 
 isValidUser(): boolean {
-  return sessionStorage.getItem('userlogged') != null ? true : false;
+  return sessionStorage.getItem('username') != null ? true : false;
 }
 logOut(): void {
-  sessionStorage.removeItem('userlogged');
+  sessionStorage.removeItem('username');
+  sessionStorage.removeItem('token')
 }
 }

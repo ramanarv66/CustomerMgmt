@@ -38,12 +38,12 @@ export class LoginComponent implements OnInit {
         console.log(data)
         this.router.navigate(['/viewcustomers']);
       },
-      (completed:string)=>{
-        console.log('completed')
-        console.log(completed)
-        if(completed)
-        this.router.navigate(['/viewcustomers']);
-      },
+      // (completed:string)=>{
+      //   console.log('completed')
+      //   console.log(completed)
+      //   if(completed)
+      //   
+      // },
       () => {
         this.invalidLogin = true
 
